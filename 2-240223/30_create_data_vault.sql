@@ -24,7 +24,19 @@ CREATE TABLE data_vault.hub_kunde (
 
 -- Satelliten
 
--- Satellit für Fahrzeuge (angepasst, um alle relevanten Felder einzuschließen)
+-- Satellit für Messungen
+CREATE TABLE data_vault.sat_messung (
+    hub_id INTEGER NOT NULL,
+    messung_id INTEGER NOT NULL,
+    zeitpunkt_messung TIMESTAMP,
+    geschwindigkeit INTEGER,
+    empfangen TIMESTAMP,
+    load_date TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (hub_id, load_date),
+    FOREIGN KEY (hub_id) REFERENCES data_vault.hub_fahrzeug(hub_id)
+);
+
+-- Satellit für Fahrzeuge
 CREATE TABLE data_vault.sat_fahrzeug (
     hub_id INTEGER NOT NULL,
     hersteller_code CHAR(3),
