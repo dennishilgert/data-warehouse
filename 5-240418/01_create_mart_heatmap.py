@@ -56,13 +56,13 @@ plt.figure(figsize=(12, 8))
 ax = sns.heatmap(pivot_table, annot=True, fmt=".0f", cmap="YlGnBu")
 
 # Set the title and axis labels
-plt.title('Verkaufte Einheiten pro Hersteller und Datum')
+plt.title('Verkaufte Fahrzeuge pro Hersteller und Datum')
 plt.xlabel('Verkaufsdatum')
 plt.ylabel('Herstellername')
 
 # Save the heatmap as a PNG file
 plt.tight_layout()  # Ensure a better fit for the axis labels
-plt.savefig('./5-240418/heatmap.png')
+plt.savefig('./5-240418/heatmap-manufacturer-date.png')
 
 # Inform the user about the file save location
 print("The heatmap has been saved as 'heatmap.png' in the directory './5-240418/'.")
