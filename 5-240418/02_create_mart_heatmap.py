@@ -10,11 +10,11 @@ from datetime import datetime
 load_dotenv()
 
 # Retrieve database connection details from environment variables
-host = os.getenv("DB_HOST", "localhost")
-port = os.getenv("DB_PORT", "5432")
-dbname = os.getenv("DB_NAME", "warehouse")
-user = os.getenv("DB_USER", "postgres")
-password = os.getenv("DB_PASSWORD", "password")
+host = os.getenv("DB_HOST")
+port = os.getenv("DB_PORT")
+dbname = os.getenv("DB_NAME")
+user = os.getenv("DB_USER")
+password = os.getenv("DB_PASSWORD")
 
 # Establish a database connection using credentials from .env file
 conn = psycopg2.connect(
